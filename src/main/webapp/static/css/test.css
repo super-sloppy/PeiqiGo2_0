@@ -1,0 +1,254 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: "微软雅黑";
+
+
+}
+.header{
+    height: 60px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #242424;
+    border-bottom: #e6e6e6 solid 1px;
+    min-width: 1010px;
+    z-index: 3;
+}
+.header .logo{
+    float: left;
+    width: 97px;
+    height: 34px;
+    margin-left: 71px;
+    margin-top: 10px;
+}
+.header .logo img{
+    width: 130px;
+}
+.header .profile{
+    position: fixed;
+    top: 5px;
+    left: 1200px;
+    width: 60px;
+    height: 60px;
+}
+.header .profile img{
+    vertical-align: middle;
+    border-radius: 50%;
+
+}
+a{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+a:-webkit-any-link{
+    cursor: pointer;
+}
+#fixed{
+    position: fixed;
+    top: 61px;
+    left: 0;
+    background: #242424;
+    width: 60px;
+    bottom: 0;
+    z-index: 99;
+}
+#fixed dl{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 60px;
+    position: absolute;
+    left: 0;
+    top: 42%;
+    bottom: 0;
+    vertical-align: middle;
+    margin-top: -240px;
+
+}
+#fixed dd{
+    font: inherit;
+    font-size: 12px;
+}
+#fixed a.intro{
+    background: transparent url(/static/images/产品介绍.png);
+    background-size: 60px 60px;
+    background-position: 0 -6px;
+}
+#fixed a.analysis{
+    background: transparent url(/static/images/数据分析.png);
+    background-size: 60px 60px;
+    background-position: 0 -6px;
+}
+#fixed a.question{
+    background: transparent url(/static/images/问题.png);
+    background-size: 60px 60px;
+    background-position: 0 -6px;
+}
+#fixed a.connect{
+    background: transparent url(/static/images/联系我们.png);
+    background-size: 60px 60px;
+    background-position: 0 -6px;
+}
+#fixed a, #fixed a:link{
+    text-decoration: none;
+    display: block;
+    height: 60px;
+    color: #707384;
+    font-weight: bold;
+    line-height: 100px;
+    overflow: hidden;
+    border-bottom: solid 3px black;
+}
+#box{
+    width: 300px;
+    position: fixed;
+    top: 61px;
+    left: 60px;
+    background: #444444;
+    bottom: 0;
+    z-index: 99;
+}
+#box #box1{
+    position: absolute;
+    width: 300px;
+    top: 0;
+    left: 0;
+    height: 220px;
+    border-bottom: 2px solid #FFFFFF;
+}
+#box #box2{
+    position: absolute;
+    width: 300px;
+    top: 220px;
+    left: 0;
+    bottom: 0;
+}
+#chat{
+    position: fixed;
+    top: 62px;
+    left: 361px;
+    right: 0;
+    bottom: 0;
+
+}
+#chat .chat-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 440px;
+    background: #E6E6E6;
+    border-bottom: 1px solid black;
+    overflow-y: auto;
+}
+#chat .chat-box .chat-right{
+    text-align: right;
+    padding-right: 10px;
+}
+#chat .chat-box .chat-right img{
+    vertical-align: middle;
+    border-radius: 50%;
+}
+#chat .chat-box .chat-left{
+    padding: 10px 0 0 10px;
+}
+#chat .chat-box .chat-left img{
+    vertical-align: middle;
+    border-radius: 50%;
+}
+#chat #evaluation{
+    position: absolute;
+    top: 441px;
+    left: 0;
+    height: 40px;
+    right: 0;
+    background: #444444;
+    border-bottom: 3px solid black;
+}
+#chat #evaluation a{
+    text-decoration: none;
+    display: block;
+    height: 40px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 20px;
+    overflow: hidden;
+}
+#chat #evaluation a.satisfaction{
+    background: transparent url(/static/images/满意.png) no-repeat;
+    background-size: 100px 100px;
+    background-position: -28px -28px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 140px;
+    bottom: 0;
+}
+#chat #evaluation a span{
+    position: absolute;
+    top: 0;
+    left: 40px;
+    right: 00px;
+    bottom: 0;
+    text-align: center;
+    line-height: 40px;
+}
+#chat #evaluation a.problems{
+    background: transparent url(/static/images/常见问题.png) no-repeat;
+    background-size: 100px 100px;
+    background-position: -26px -32px;
+    position: absolute;
+    top: 0;
+    left: 150px;
+    width: 140px;
+    bottom: 0;
+}
+#chat #message{
+    background: #242424;
+    position: absolute;
+    left: 0;
+    top: 484px;
+    right: 0;
+
+    bottom: 0;
+    margin-right: 0;
+}
+#chat #message .chat-message{
+    float: left;
+    /*outline: none;*/
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    right: 0;
+    margin-right: 150px;
+    bottom: 5px;
+}
+#chat #message .send{
+    position: absolute;
+    width: 150px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+}
+#chat #message .send input{
+    font-size: 24px;
+    position: absolute;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    background: #00A3F0;
+    border-radius: 10px;
+    width: 120px;
+    height: 60px;
+    margin-top: 10px;
+}
