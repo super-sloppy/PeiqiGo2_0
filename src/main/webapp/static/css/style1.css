@@ -32,12 +32,12 @@ body{
 .header .profile{
     position: fixed;
     top: 5px;
-    left: 1200px;
+    right:5%;
     width: 60px;
     height: 60px;
 }
 .header .profile img{
-    vertical-align: middle;
+    margin-right: 10%;
     border-radius: 50%;
 
 }
@@ -172,6 +172,10 @@ a:-webkit-any-link{
     border-radius: 10px;
     min-height: 50px;
 }
+#chat .chat-box .chat-right .myfont p{
+    margin-right:30px;
+    line-height: 30px;
+}
 #chat .chat-box .chat-left .myfont p{
     margin-right:30px;
     line-height: 30px;
@@ -193,7 +197,7 @@ a:-webkit-any-link{
     width: 300px;
     height: auto;
     float: left;
-    background-color: #9c9c9c;
+    background-color: white;
     border-radius: 10px;
     min-height: 50px;
 }
@@ -343,14 +347,14 @@ a:-webkit-any-link{
 }
 .big{
     position: absolute;
-    background-color: #eb5b5b;
-    border-radius: 500px;
+    background-image: url(/static/images/bg_l.png);
+    background-size: cover;
     left:60px;
 }
 .big2{
     position: absolute;
-    background-color: #f6c133;
-    border-radius: 500px;
+    background-image: url(/static/images/bg_r.png);
+    background-size: cover;
     right: 60px;
 }
 .content1{
