@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wk.dao.TKnowledgeMapper">
+  <resultMap id="BaseResultMap" type="com.wk.model.TKnowledge">
+    <constructor>
+      <idArg column="ID" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="QUESTION1" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="QUESTION2" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="QUESTION3" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="QUESTION4" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="QUESTION5" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="QUESTION6" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ANSWER" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="USE_NUM" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="SOLVE_NUM" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="UNSOLVE_NUM" javaType="java.lang.Integer" jdbcType="INTEGER" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, QUESTION1, QUESTION2, QUESTION3, QUESTION4, QUESTION5, QUESTION6, ANSWER, USE_NUM, 
+    SOLVE_NUM, UNSOLVE_NUM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_knowledge
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_knowledge
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wk.model.TKnowledge">
+    insert into t_knowledge (ID, QUESTION1, QUESTION2, 
+      QUESTION3, QUESTION4, QUESTION5, 
+      QUESTION6, ANSWER, USE_NUM, 
+      SOLVE_NUM, UNSOLVE_NUM)
+    values (#{id,jdbcType=INTEGER}, #{question1,jdbcType=VARCHAR}, #{question2,jdbcType=VARCHAR}, 
+      #{question3,jdbcType=VARCHAR}, #{question4,jdbcType=VARCHAR}, #{question5,jdbcType=VARCHAR}, 
+      #{question6,jdbcType=VARCHAR}, #{answer,jdbcType=VARCHAR}, #{useNum,jdbcType=INTEGER}, 
+      #{solveNum,jdbcType=INTEGER}, #{unsolveNum,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wk.model.TKnowledge">
+    insert into t_knowledge
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="question1 != null">
+        QUESTION1,
+      </if>
+      <if test="question2 != null">
+        QUESTION2,
+      </if>
+      <if test="question3 != null">
+        QUESTION3,
+      </if>
+      <if test="question4 != null">
+        QUESTION4,
+      </if>
+      <if test="question5 != null">
+        QUESTION5,
+      </if>
+      <if test="question6 != null">
+        QUESTION6,
+      </if>
+      <if test="answer != null">
+        ANSWER,
+      </if>
+      <if test="useNum != null">
+        USE_NUM,
+      </if>
+      <if test="solveNum != null">
+        SOLVE_NUM,
+      </if>
+      <if test="unsolveNum != null">
+        UNSOLVE_NUM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="question1 != null">
+        #{question1,jdbcType=VARCHAR},
+      </if>
+      <if test="question2 != null">
+        #{question2,jdbcType=VARCHAR},
+      </if>
+      <if test="question3 != null">
+        #{question3,jdbcType=VARCHAR},
+      </if>
+      <if test="question4 != null">
+        #{question4,jdbcType=VARCHAR},
+      </if>
+      <if test="question5 != null">
+        #{question5,jdbcType=VARCHAR},
+      </if>
+      <if test="question6 != null">
+        #{question6,jdbcType=VARCHAR},
+      </if>
+      <if test="answer != null">
+        #{answer,jdbcType=VARCHAR},
+      </if>
+      <if test="useNum != null">
+        #{useNum,jdbcType=INTEGER},
+      </if>
+      <if test="solveNum != null">
+        #{solveNum,jdbcType=INTEGER},
+      </if>
+      <if test="unsolveNum != null">
+        #{unsolveNum,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wk.model.TKnowledge">
+    update t_knowledge
+    <set>
+      <if test="question1 != null">
+        QUESTION1 = #{question1,jdbcType=VARCHAR},
+      </if>
+      <if test="question2 != null">
+        QUESTION2 = #{question2,jdbcType=VARCHAR},
+      </if>
+      <if test="question3 != null">
+        QUESTION3 = #{question3,jdbcType=VARCHAR},
+      </if>
+      <if test="question4 != null">
+        QUESTION4 = #{question4,jdbcType=VARCHAR},
+      </if>
+      <if test="question5 != null">
+        QUESTION5 = #{question5,jdbcType=VARCHAR},
+      </if>
+      <if test="question6 != null">
+        QUESTION6 = #{question6,jdbcType=VARCHAR},
+      </if>
+      <if test="answer != null">
+        ANSWER = #{answer,jdbcType=VARCHAR},
+      </if>
+      <if test="useNum != null">
+        USE_NUM = #{useNum,jdbcType=INTEGER},
+      </if>
+      <if test="solveNum != null">
+        SOLVE_NUM = #{solveNum,jdbcType=INTEGER},
+      </if>
+      <if test="unsolveNum != null">
+        UNSOLVE_NUM = #{unsolveNum,jdbcType=INTEGER},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wk.model.TKnowledge">
+    update t_knowledge
+    set QUESTION1 = #{question1,jdbcType=VARCHAR},
+      QUESTION2 = #{question2,jdbcType=VARCHAR},
+      QUESTION3 = #{question3,jdbcType=VARCHAR},
+      QUESTION4 = #{question4,jdbcType=VARCHAR},
+      QUESTION5 = #{question5,jdbcType=VARCHAR},
+      QUESTION6 = #{question6,jdbcType=VARCHAR},
+      ANSWER = #{answer,jdbcType=VARCHAR},
+      USE_NUM = #{useNum,jdbcType=INTEGER},
+      SOLVE_NUM = #{solveNum,jdbcType=INTEGER},
+      UNSOLVE_NUM = #{unsolveNum,jdbcType=INTEGER}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM t_knowledge
+  </select>
+
+  <select id="selectByLike" resultMap="BaseResultMap" parameterType="java.lang.String[]">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM t_knowledge
+    WHERE  QUESTION1 LIKE %#{question1,jdbcType=INTEGER}% OR
+            QUESTION2 LIKE %#{question2,jdbcType=INTEGER}% OR
+            QUESTION3 LIKE %#{question3,jdbcType=INTEGER}% OR
+            QUESTION4 LIKE %#{question4,jdbcType=INTEGER}% OR
+            QUESTION5 LIKE %#{question5,jdbcType=INTEGER}% OR
+            QUESTION6 LIKE %#{question6,jdbcType=INTEGER}% OR
+  </select>
+
+  <update id="updateByUse" parameterType="com.wk.model.TKnowledge">
+    update t_knowledge
+    set
+    USE_NUM = #{useNum,jdbcType=INTEGER},
+    SOLVE_NUM = #{solveNum,jdbcType=INTEGER},
+    UNSOLVE_NUM = #{unsolveNum,jdbcType=INTEGER}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  
+</mapper>
